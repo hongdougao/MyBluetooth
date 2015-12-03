@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="12F45" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="5RN-ka-8KE">
+    <dependencies>
+        <deployment defaultVersion="1552" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
+    </dependencies>
+    <scenes>
+        <!--Scan For View Controller - scanFor-->
+        <scene sceneID="5">
+            <objects>
+                <viewController id="2" customClass="ScanForViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="UV6-TJ-UeT">
+                                <rect key="frame" x="0.0" y="0.0" width="325" height="358"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="2" id="zka-JN-ct5"/>
+                                    <outlet property="delegate" destination="2" id="rzX-lI-CPC"/>
+                                </connections>
+                            </tableView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="4aE-7E-nuG">
+                                <rect key="frame" x="0.0" y="352" width="320" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" none="YES" notEnabled="YES"/>
+                                </accessibility>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="scanFor" id="6hk-Fp-rb8">
+                        <barButtonItem key="leftBarButtonItem" title="ReScan" id="lSL-7K-sye">
+                            <connections>
+                                <action selector="reScan:" destination="2" id="EDd-lR-6kT"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="centerMgrState" id="vuj-1w-Nqb"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="centerMgrState" destination="vuj-1w-Nqb" id="jY2-kz-Bgm"/>
+                        <outlet property="tableViewPeripheral" destination="UV6-TJ-UeT" id="HtZ-E9-aPT"/>
+                        <outlet property="tvLog" destination="4aE-7E-nuG" id="7Kx-Ie-dfZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="776" y="112"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="igS-iy-Mbq">
+            <objects>
+                <navigationController definesPresentationContext="YES" id="5RN-ka-8KE" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="efk-gm-S9H">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="vLe-2i-GIb" kind="relationship" relationship="rootViewController" id="GCZ-Mp-Wla"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uuZ-ZZ-1v5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-271" y="61"/>
+        </scene>
+        <!--Content View Controller-->
+        <scene sceneID="lgC-NI-iC1">
+            <objects>
+                <tableViewController id="vLe-2i-GIb" customClass="ContentViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="8GM-Yb-YKW">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" restorationIdentifier="Cell" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="kY1-6g-gCI">
+                                <rect key="frame" x="0.0" y="86" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="kY1-6g-gCI" id="MPX-MP-cys">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="vLe-2i-GIb" id="cOr-fx-06y"/>
+                            <outlet property="delegate" destination="vLe-2i-GIb" id="j41-pl-0He"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="aqO-H8-l4q"/>
+                    <connections>
+                        <segue destination="2" kind="push" identifier="ScanFor" id="2cv-xx-Xfi"/>
+                        <segue destination="4lm-U8-cC1" kind="push" identifier="RetrieveKnownPeripherals" id="CFK-fN-DHr"/>
+                        <segue destination="wQy-Y3-us9" kind="push" identifier="RetrieveConnectedPeripherals" id="PwO-1x-rnj"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8vW-Hj-oSa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="194" y="61"/>
+        </scene>
+        <!--Retrieve Known View Controller - RetrieveKnown-->
+        <scene sceneID="Yf3-Ow-mzj">
+            <objects>
+                <viewController id="4lm-U8-cC1" customClass="RetrieveKnownViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="CK5-7n-ds9">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Qd7-tb-90N">
+                                <rect key="frame" x="0.0" y="20" width="325" height="315"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="4lm-U8-cC1" id="iva-7h-1W6"/>
+                                    <outlet property="delegate" destination="4lm-U8-cC1" id="1CD-hQ-S4W"/>
+                                </connections>
+                            </tableView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="osf-kN-6eh">
+                                <rect key="frame" x="0.0" y="337" width="320" height="143"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" none="YES" notEnabled="YES"/>
+                                </accessibility>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="RetrieveKnown" id="S4U-7p-76B">
+                        <barButtonItem key="leftBarButtonItem" title="Retrieve" id="dnm-ai-ZGL">
+                            <connections>
+                                <action selector="Retrieve:" destination="4lm-U8-cC1" id="WGe-cz-ZPD"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="centerMgrState" id="Ugx-r7-ucr"/>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="centerMgrState" destination="Ugx-r7-ucr" id="rCO-10-JmE"/>
+                        <outlet property="tableViewPeripheral" destination="Qd7-tb-90N" id="T1A-iW-A2a"/>
+                        <outlet property="tvLog" destination="osf-kN-6eh" id="gUP-fb-9d7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TtQ-NV-xif" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="776" y="-455"/>
+        </scene>
+        <!--Retrieve Connected View Controller - RetrieveKnown-->
+        <scene sceneID="QQw-5Q-EO6">
+            <objects>
+                <viewController id="wQy-Y3-us9" customClass="RetrieveConnectedViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="r9n-tT-lQm">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="4Tg-mc-c9J">
+                                <rect key="frame" x="0.0" y="20" width="325" height="315"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="wQy-Y3-us9" id="wxt-B2-3hY"/>
+                                    <outlet property="delegate" destination="wQy-Y3-us9" id="ygm-jW-gxi"/>
+                                </connections>
+                            </tableView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="BTS-Sp-db2">
+                                <rect key="frame" x="0.0" y="337" width="320" height="143"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" none="YES" notEnabled="YES"/>
+                                </accessibility>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="RetrieveKnown" id="pC0-45-1yG">
+                        <barButtonItem key="leftBarButtonItem" title="Retrieve" id="QWC-FM-ubh">
+                            <connections>
+                                <action selector="Retrieve:" destination="wQy-Y3-us9" id="hzX-2h-mPZ"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="centerMgrState" id="kYV-SG-Hwh"/>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="centerMgrState" destination="kYV-SG-Hwh" id="Uyp-7Q-sNM"/>
+                        <outlet property="tableViewPeripheral" destination="4Tg-mc-c9J" id="fXe-7X-QDd"/>
+                        <outlet property="tvLog" destination="BTS-Sp-db2" id="ant-3q-ftg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="j4S-HX-kUF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="776" y="684"/>
+        </scene>
+    </scenes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination"/>
+    </simulatedMetricsContainer>
+</document>
